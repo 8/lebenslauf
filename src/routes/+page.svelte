@@ -36,12 +36,12 @@
 
         <div>
           <div class="label">E-Mail</div>
-          <div>martin.kramer@lostindetails.com</div>
+          <div><a href="mailto:martin.kramer@lostindetails.com">martin.kramer@lostindetails.com</a></div>
         </div>
 
         <div>
           <div class="label">Web</div>
-          <div>https://lostindetails.com</div>
+          <div><a href="https://lostindetails.com">https://lostindetails.com</a></div>
         </div>
 
         <div>
