@@ -1,8 +1,23 @@
+<script lang="ts">
+  import { DateTime } from 'luxon'
+  import Item from './Item.svelte'
+
+  import Csharp from '$lib/icons/csharp.svelte'
+  import Fsharp from '$lib/icons/fsharp.svelte'
+  import Typescript from '$lib/icons/typescript.svelte'
+  import Javascript from '$lib/icons/javascript.svelte'
+  import Rust from '$lib/icons/rust.svelte'
+  import Sqlite from '$lib/icons/sqlite.svelte'
+  import { projects } from '$lib/types'
+    import Icon from '$lib/icons/icon.svelte'
+
+  const formatDate = (dt: Date | undefined) =>
+    dt ? DateTime.fromJSDate(dt).toFormat('yyyy-MM') : ''
+</script>
+
 <div class="px-10">
   <div class="grid auto-cols-min">
-    <div class="bg-cyan-700 h-20 text-white px-4 py-1 grid items-end">
-      Lebenslauf
-    </div>
+    <div class="bg-cyan-700 h-20 text-white px-4 py-1 grid items-end">Lebenslauf</div>
   </div>
 
   <div class="grid grid-cols-[1fr_auto]">
@@ -19,6 +34,7 @@
       <h2>Persönliche Daten</h2>
 
       <div class="grid gap-y-2">
+        <Item label="Name">Martin Kramer</Item>
         <div>
           <div class="label">Name</div>
           <div>Martin Kramer</div>
@@ -36,7 +52,9 @@
 
         <div>
           <div class="label">E-Mail</div>
-          <div><a href="mailto:martin.kramer@lostindetails.com">martin.kramer@lostindetails.com</a></div>
+          <div>
+            <a href="mailto:martin.kramer@lostindetails.com">martin.kramer@lostindetails.com</a>
+          </div>
         </div>
 
         <div>
@@ -49,7 +67,6 @@
           <div>3.4.1981 in Wien</div>
         </div>
       </div>
-
     </div>
 
     <div>
@@ -58,7 +75,7 @@
       <div class="grid gap-y-2">
         <div>
           <div class="label">2015/10-2024/12</div>
-          <div>Selbständiger Software Consulatant</div>
+          <div>Selbständiger Software Consultant</div>
         </div>
         <div>
           <div class="label">2015/8-2015/10</div>
@@ -79,16 +96,14 @@
           <div class="label">1999-2001</div>
           <div>Studium Informatik an der TU-Wien</div>
         </div>
-        
+
         <div>
           <div class="label">bis 1999</div>
           <div>Realgymnasium auf der Schmelz</div>
         </div>
       </div>
     </div>
-
   </div>
-
 
   <div class="pt-10">
     <h2>Kenntnisse & Fähigkeiten</h2>
@@ -112,74 +127,158 @@
 
   <div style="break-after:page"></div>
 
+  <div class="pt-10">
+    <h2>Projekte</h2>
+    <div class="grid grid-gap-y-5 grid-flow-row">
+      {#each projects as project}
+        <div class="grid gap-y-1">
+          <div class="label font-semibold">
+            {formatDate(project.fromDate)}
+            {`${project.toDate ? '-' : ''}`}
+            {formatDate(project.toDate)}
+          </div>
+          <div class="font-semibold text-gray-800 tracking-wide">{project.name}</div>
+          <div class="grid grid-flow-col auto-cols-min divide-x-2 divide-gray-400">
+            {#each project.types as type}
+            <div class="px-2 first:pl-0 last:pr-0">
+              {type}
+            </div>
+            {/each}
+          </div>
+          <div class="grid grid-flow-col auto-cols-min gap-x-2">
+            {#each project.languages as language}
+            <Icon name={language} />
+            {/each}
+          </div>
+          <div class="grid grid-flow-col auto-cols-min gap-x-2">
+            {#each project.technologies as technology}
+            <Icon name={technology} />
+            {/each}
+          </div>
+        </div>
+      {/each}
+      <!-- <div>Fremdwährungsanlage</div>
+      <div>Amescon GmbH</div>
+      <div>2024</div> -->
+
+      <!--
+      <div>Timetracking</div>
+
+      <div>Website & Desktop Application / <a href="https://gitcontributors.com">git-contributors.com</a></div>
+
+      <div>Website & Desktop Application / <a href="https://vault-exporter.com">vault-exporter.com</a></div>
+
+      <div>Desktop Applikation / Steuerberatungskanzlei</div>
+
+      <div>Web und Desktop Applikation / Ringschuh</div>
+
+      <div>Web Applikationen und Service Entwicklung / Kapsch Traffic Com</div>
+
+      <div>Datenbankwartung / Ringschuh</div>
+
+      <div>Softwareberatung / Anwaltskanzlei</div>
+
+      <div>Mustererkungsbasierte Dokumentenverarbeitung / AKV</div>
+      
+      <div>Web-basierte Fragebogensoftware / Universität Salzburg</div>
+      -->
+    </div>
+  </div>
+
   <div class="grid grid-cols-2 gap-y-5 pt-20">
-      <div>
-        <div class="label">Programmiersprachen</div>
-        <ul>
-          <li>C#</li>
-          <li>Typescript</li>
-          <li>F#</li>
-          <li>Javascript</li>
-          <li>rust</li>
-          <li>SQL</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">Programmiersprachen</div>
+      <ul>
+        <li>
+          <!-- <i class="devicon-csharp-original"></i> -->
+          <div class="w-6">
+            <Csharp />
+          </div>
+          C#
+        </li>
+        <li>
+          Typescript
+          <Icon name="Typescript" />
+          <!-- <div class="w-6">
+            <Typescript />
+          </div> -->
+        </li>
+        <li>
+          F#
+          <div class="w-6">
+            <Fsharp />
+          </div>
+        </li>
+        <li>
+          Javascript
+          <div class="w-6">
+            <Javascript />
+          </div>
+        </li>
+        <li>
+          rust
+          <div class="w-6">
+            <Rust />
+          </div>
+        </li>
+        <li>SQL</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">Desktop Applikation</div>
-        <ul>
-          <li>Tauri</li>
-          <li>WPF</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">Desktop Applikation</div>
+      <ul>
+        <li>Tauri</li>
+        <li>WPF</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">Deployment</div>
-        <ul>
-          <li>Docker</li>
-          <li>Ansible</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">Deployment</div>
+      <ul>
+        <li>Docker</li>
+        <li>Ansible</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">CI/CD Pipelines</div>
-        <ul>
-          <li>gitlab</li>
-          <li>github</li>
-          <li>jenkins</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">CI/CD Pipelines</div>
+      <ul>
+        <li>gitlab</li>
+        <li>github</li>
+        <li>jenkins</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">Datenbanken</div>
-        <ul>
-          <li>PostgreSQL</li>
-          <li>MSSQL</li>
-          <li>Sqlite</li>
-          <li>MySql</li>
-          <li>Oracle</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">Datenbanken</div>
+      <ul>
+        <li>PostgreSQL</li>
+        <li>MSSQL</li>
+        <li>Sqlite</li>
+        <li>MySql</li>
+        <li>Oracle</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">Web Technologien</div>
-        <ul>
-          <li>Svelte</li>
-          <li>Vue</li>
-          <li>TailwindCSS</li>
-          <li>Angular</li>
-        </ul>
-      </div>
+    <div>
+      <div class="label">Web Technologien</div>
+      <ul>
+        <li>Svelte</li>
+        <li>Vue</li>
+        <li>TailwindCSS</li>
+        <li>Angular</li>
+      </ul>
+    </div>
 
-      <div>
-        <div class="label">Mobile</div>
-        <ul>
-          <li>Tauri mobile</li>
-          <li>Xamarin Forms</li>
-          <li>Apache Cordova</li>
-        </ul>
-      </div>
-
+    <div>
+      <div class="label">Mobile</div>
+      <ul>
+        <li>Tauri mobile</li>
+        <li>Xamarin Forms</li>
+        <li>Apache Cordova</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -195,5 +294,8 @@
   }
   .label {
     @apply text-cyan-700;
+  }
+  a {
+    @apply underline;
   }
 </style>
