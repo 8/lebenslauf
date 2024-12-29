@@ -1,15 +1,8 @@
 <script lang="ts">
   import { DateTime } from 'luxon'
   import Item from './Item.svelte'
-
-  import Csharp from '$lib/icons/csharp.svelte'
-  import Fsharp from '$lib/icons/fsharp.svelte'
-  import Typescript from '$lib/icons/typescript.svelte'
-  import Javascript from '$lib/icons/javascript.svelte'
-  import Rust from '$lib/icons/rust.svelte'
-  import Sqlite from '$lib/icons/sqlite.svelte'
-  import { projects } from '$lib/types'
-    import Icon from '$lib/icons/icon.svelte'
+  import { projects } from '$lib/projects'
+  import Icon from '$lib/icons/icon.svelte'
 
   const formatDate = (dt: Date | undefined) =>
     dt ? DateTime.fromJSDate(dt).toFormat('yyyy-MM') : ''
@@ -129,30 +122,30 @@
 
   <div class="pt-10">
     <h2>Projekte</h2>
-    <div class="grid grid-gap-y-5 grid-flow-row">
+    <div class="grid gap-y-5 grid-flow-row">
       {#each projects as project}
-        <div class="grid gap-y-1">
+        <div class="grid ">
           <div class="label font-semibold">
             {formatDate(project.fromDate)}
             {`${project.toDate ? '-' : ''}`}
             {formatDate(project.toDate)}
           </div>
-          <div class="font-semibold text-gray-800 tracking-wide">{project.name}</div>
+          <div class="font-semibold text-gray-600 tracking-wide text-lg">{project.name}</div>
           <div class="grid grid-flow-col auto-cols-min divide-x-2 divide-gray-400">
             {#each project.types as type}
-            <div class="px-2 first:pl-0 last:pr-0">
+            <div class="px-2 first:pl-0 last:pr-0 text-gray-900">
               {type}
             </div>
             {/each}
           </div>
-          <div class="grid grid-flow-col auto-cols-min gap-x-2">
+          <div class="grid grid-flow-col auto-cols-min gap-x-2 py-1">
             {#each project.languages as language}
-            <Icon name={language} />
+            <Icon name={language} type="original" />
             {/each}
           </div>
           <div class="grid grid-flow-col auto-cols-min gap-x-2">
             {#each project.technologies as technology}
-            <Icon name={technology} />
+            <Icon name={technology} type="original" />
             {/each}
           </div>
         </div>
@@ -191,35 +184,19 @@
       <ul>
         <li>
           <!-- <i class="devicon-csharp-original"></i> -->
-          <div class="w-6">
-            <Csharp />
-          </div>
           C#
         </li>
         <li>
           Typescript
-          <Icon name="Typescript" />
-          <!-- <div class="w-6">
-            <Typescript />
-          </div> -->
         </li>
         <li>
           F#
-          <div class="w-6">
-            <Fsharp />
-          </div>
         </li>
         <li>
           Javascript
-          <div class="w-6">
-            <Javascript />
-          </div>
         </li>
         <li>
           rust
-          <div class="w-6">
-            <Rust />
-          </div>
         </li>
         <li>SQL</li>
       </ul>
