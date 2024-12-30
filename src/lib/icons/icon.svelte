@@ -27,6 +27,8 @@
   import Angular from './angular.svelte'
   import Redis from './redis.svelte'
     import Mssqlserver from './mssqlserver.svelte'
+    import Signalr from './signalr.svelte'
+    import Sql from './sql.svelte'
 
   let { name, type = 'original' }: {
     name: Language | ProjectType | Technology,
@@ -75,7 +77,7 @@
         return Wpf
       case 'PostgreSQL':
         return Postgres
-      case 'docker':
+      case 'Docker':
         return Docker
       case 'Tailwind CSS':
         return Tailwindcss
@@ -89,6 +91,10 @@
         return Redis
       case 'SQL Server':
         return Mssqlserver
+      case 'SignalR':
+        return Signalr
+      case 'SQL':
+        return Sql
       default:
         return undefined
     }

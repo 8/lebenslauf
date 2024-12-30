@@ -6,7 +6,7 @@ export type Technology =
   | 'Ansible'
   | 'PostgreSQL'
   | 'SQLite'
-  | 'docker'
+  | 'Docker'
   | 'Tauri'
   | 'Tailwind CSS'
   | 'WPF'
