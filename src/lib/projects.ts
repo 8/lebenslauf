@@ -37,7 +37,7 @@ export const projects: Array<Project> = [
     fromDate: dateFromYM('2019-10')
   },
   {
-    name: 'Automatische Dokumentenverarbeitung mit Texterkennung',
+    name: 'Dokumentenverarbeitung mit Texterkennung',
     types: ['Api', 'Service', 'WebApp'],
     technologies: ['.NET', 'OpenCV', 'Tesseract', 'docker'],
     languages: ['C#'],
@@ -74,3 +74,6 @@ export const projects: Array<Project> = [
     fromDate: dateFromYM('2015-10')
   }
 ]
+
+// const technologies : Array<string> = 
+// const devTools : Array<string> = y

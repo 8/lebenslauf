@@ -10,5 +10,8 @@
 </style>
 
 <script lang="ts">
-  let { label, children } = $props()
+  let { label, children }: {
+    label: string,
+    children?: any,
+  } = $props()
 </script>
