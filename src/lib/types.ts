@@ -28,8 +28,9 @@ export type Technology =
   | 'Bootstrap'
   | 'Redis'
   | 'OpenAPI'
+  | 'WinForms'
 
-export type DevTools =
+export type DevTool =
   | 'Visual Studio'
   | 'Visual Studio Code'
   | 'Datagrip'

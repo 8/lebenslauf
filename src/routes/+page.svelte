@@ -4,6 +4,8 @@
   import Projects from './Projects.svelte'
   import PageBreak from './PageBreak.svelte'
   import Technologies from './Technologies.svelte'
+    import { languages, technologies } from '$lib/projects'
+    import Icon from '$lib/icons/icon.svelte'
 </script>
 
 <div class="px-10">
@@ -85,5 +87,36 @@
     <Projects />
   </div>
 
-  <Technologies />
+  <div class="pt-10 grid grid-cols-2">
+    <Section title="Programmiersprachen">
+      <ul class="list-none grid grid-flow-row gap-y-1">
+        {#each languages as language}
+        <li class="">
+          <div class="grid grid-flow-col auto-cols-min gap-1 items-center">
+            <Icon name={language} type="original" />
+            {language}
+          </div>
+        </li>
+        
+        {/each}
+      </ul>
+    </Section>
+    <Section title="Technologien">
+      <ul class="list-none grid grid-flow-row gap-y-1">
+        {#each technologies as technology}
+          <li>
+            <div class="grid grid-flow-col auto-cols-min gap-1 items-center text-nowrap">
+              <Icon name={technology} type="original" />
+              {technology}
+            </div>
+          </li>
+        {/each}
+      </ul>
+    </Section>
+  </div>
+
+  <div>
+  </div>
+
+  <!-- <Technologies /> -->
 </div>

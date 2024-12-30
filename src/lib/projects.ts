@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
-import type { Project } from "./types";
+import type { DevTool, Language, Project, Technology } from "./types";
+import * as R from "remeda"
 
 const dateFromYM = (s: string) => DateTime.fromFormat(s, 'yyyy-MM').toJSDate()
 
@@ -8,7 +9,7 @@ export const projects: Array<Project> = [
     name: 'GitContributors',
     url: 'https://gitcontributors.com',
     types: ['WebSite', 'DesktopApp'],
-    technologies: ['Tauri', 'Ansible', 'SQLite'],
+    technologies: ['Tauri', 'Svelte', 'Ansible', 'SQLite'],
     languages: ['Rust', 'Typescript', 'SQL'],
     fromDate: dateFromYM('2023-09')
   },
@@ -16,7 +17,7 @@ export const projects: Array<Project> = [
     name: 'Timetracking',
     url: 'https://timetracking.lostindetails.com',
     types: ['WebSite', 'DesktopApp'],
-    technologies: ['Tauri', 'Ansible', 'SQLite'],
+    technologies: ['Tauri', 'Svelte', 'Ansible', 'SQLite'],
     languages: ['Rust', 'Typescript', 'SQL'],
     fromDate: dateFromYM('2024-06')
   },
@@ -32,7 +33,7 @@ export const projects: Array<Project> = [
     name: 'Vault Exporter',
     url: 'https://vault-exporter.com',
     types: ['WebSite', 'DesktopApp'],
-    technologies: ['.NET', 'WPF', 'Ansible', 'M-Files'],
+    technologies: ['.NET', 'WPF', 'Vue.js', 'Ansible', 'M-Files'],
     languages: ['C#', 'XAML'],
     fromDate: dateFromYM('2019-10')
   },
@@ -43,14 +44,6 @@ export const projects: Array<Project> = [
     languages: ['C#'],
     fromDate: dateFromYM('2019-04'),
     toDate: dateFromYM('2020-11')
-  },
-  {
-    name: 'Fragebogen Software',
-    types: ['WebApp'],
-    technologies: ['Knockout'],
-    languages: ['Typescript',  'Javascript'],
-    fromDate: dateFromYM('2017-05'),
-    toDate: dateFromYM('2019-02'),
   },
   {
     name: 'Backoffice Tolling Solutions',
@@ -69,6 +62,14 @@ export const projects: Array<Project> = [
     toDate: dateFromYM('2016-04')
   },
   {
+    name: 'Fragebogen Software',
+    types: ['WebApp'],
+    technologies: ['Knockout'],
+    languages: ['Typescript', 'Javascript'],
+    fromDate: dateFromYM('2015-10'),
+    toDate: dateFromYM('2019-02'),
+  },
+  {
     name: 'Buchhaltungsprogramm',
     types: ['DesktopApp', 'WebApp'],
     technologies: ['WPF', '.NET', 'SQL Server', 'Reporting Services'],
@@ -79,7 +80,7 @@ export const projects: Array<Project> = [
   {
     name: 'Geldverpackungsanlage',
     types: ['DesktopApp'],
-    technologies: ['.NET'],
+    technologies: ['.NET', 'WPF'],
     languages: ['C#'],
     fromDate: dateFromYM('2015-10'),
     toDate: dateFromYM('2015-12')
@@ -92,5 +93,61 @@ export const projects: Array<Project> = [
     fromDate: dateFromYM('2015-10')
   },
 ]
-// const technologies : Array<string> = 
-// const devTools : Array<string> = 
+
+// export const languages : Array<Language> =
+//   R.pipe(
+//     projects,
+//     R.flatMap(p => p.languages),
+//     R.unique(),
+//   )
+
+export const languages : Array<Language> = [
+  'C#',
+  'Typescript',
+  'F#',
+  'Rust',
+  'SQL',
+  'Javascript',
+  'XAML',
+]
+
+export const technologies : Array<Technology> = [
+  'Ansible',
+  'PostgreSQL',
+  'SQLite',
+  'docker',
+  'Tauri',
+  'Tailwind CSS',
+  'WPF',
+  'Vue.js',
+  'Svelte',
+  'SignalR',
+  'SQL Server',
+  'M-Files',
+  'Tesseract',
+  'Reporting Services',
+  'gRPC',
+  'Blazor',
+  'Knockout',
+  '.NET',
+  'OpenCV',
+  'Ubuntu',
+  'Angular',
+  'RxJS',
+  'Bootstrap',
+  'Redis',
+  'OpenAPI',
+  'WinForms',
+]
+
+export const devTools : Array<DevTool> = [
+  'Visual Studio',
+  'Visual Studio Code',
+  'Datagrip',
+  'Rider',
+  'Bun',
+  'Gitlab',
+  'Github',
+  'Git',
+  'vite' ,
+]

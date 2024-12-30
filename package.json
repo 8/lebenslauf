@@ -28,6 +28,7 @@
 	},
 	"dependencies": {
 		"devicon": "^2.16.0",
-		"luxon": "^3.5.0"
+		"luxon": "^3.5.0",
+		"remeda": "^2.19.0"
 	}
 }

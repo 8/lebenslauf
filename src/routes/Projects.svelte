@@ -38,42 +38,15 @@
         {/each}
       </div>
 
-      <div class="grid grid-flow-col auto-cols-min gap-x-2 ">
-        <div class="grid grid-flow-col auto-cols-min gap-x-2">
-          {#each project.languages as language}
-          <Icon name={language} type="original" />
-          {/each}
-        </div>
-          {#each project.technologies as technology}
-          <Icon name={technology} type="original" />
-          {/each}
+      <div class="grid grid-flow-col auto-cols-min gap-x-2 items-center">
+        {#each project.languages as language}
+        <Icon name={language} type="original" />
+        {/each}
+        {#each project.technologies as technology}
+        <Icon name={technology} type="original" />
+        {/each}
       </div>
 
     </div>
   {/each}
-  <!-- <div>Fremdwährungsanlage</div>
-  <div>Amescon GmbH</div>
-  <div>2024</div> -->
-
-  <!--
-  <div>Timetracking</div>
-
-  <div>Website & Desktop Application / <a href="https://gitcontributors.com">git-contributors.com</a></div>
-
-  <div>Website & Desktop Application / <a href="https://vault-exporter.com">vault-exporter.com</a></div>
-
-  <div>Desktop Applikation / Steuerberatungskanzlei</div>
-
-  <div>Web und Desktop Applikation / Ringschuh</div>
-
-  <div>Web Applikationen und Service Entwicklung / Kapsch Traffic Com</div>
-
-  <div>Datenbankwartung / Ringschuh</div>
-
-  <div>Softwareberatung / Anwaltskanzlei</div>
-
-  <div>Mustererkungsbasierte Dokumentenverarbeitung / AKV</div>
-  
-  <div>Web-basierte Fragebogensoftware / Universität Salzburg</div>
-  -->
 </div>
