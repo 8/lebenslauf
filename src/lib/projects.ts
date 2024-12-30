@@ -45,6 +45,14 @@ export const projects: Array<Project> = [
     toDate: dateFromYM('2020-11')
   },
   {
+    name: 'Fragebogen Software',
+    types: ['WebApp'],
+    technologies: ['Knockout'],
+    languages: ['Typescript',  'Javascript'],
+    fromDate: dateFromYM('2017-05'),
+    toDate: dateFromYM('2019-02'),
+  },
+  {
     name: 'Backoffice Tolling Solutions',
     types: ['Api', 'WebApp', 'Service'],
     technologies: ['.NET', 'Ansible', 'docker', 'SignalR', 'gRPC', 'Blazor', 'OpenAPI', 'WPF', 'RxJS'],
@@ -64,16 +72,25 @@ export const projects: Array<Project> = [
     name: 'Buchhaltungsprogramm',
     types: ['DesktopApp', 'WebApp'],
     technologies: ['WPF', '.NET', 'SQL Server', 'Reporting Services'],
-    languages: ['C#', 'XAML', 'SQL', 'Javascript']
+    languages: ['C#', 'XAML', 'SQL', 'Javascript'],
+    fromDate: dateFromYM('2015-10'),
+    toDate: dateFromYM('2024-09'),
   },
   {
-    name: 'WebApplikation mit M-Files integration',
+    name: 'Geldverpackungsanlage',
+    types: ['DesktopApp'],
+    technologies: ['.NET'],
+    languages: ['C#'],
+    fromDate: dateFromYM('2015-10'),
+    toDate: dateFromYM('2015-12')
+  },
+  {
+    name: 'WebApplikation mit M-Files Integration',
     types: ['WebApp'],
     technologies: ['M-Files', '.NET'],
     languages: ['C#'],
     fromDate: dateFromYM('2015-10')
-  }
+  },
 ]
-
 // const technologies : Array<string> = 
-// const devTools : Array<string> = y
+// const devTools : Array<string> = 

@@ -7,18 +7,28 @@
 </script>
 
 <h2>Projekte</h2>
-<div class="grid gap-y-5 grid-flow-row grid-cols-4 gap-3">
+<div class="grid gap-y-8 grid-flow-row grid-cols-3 gap-3">
   {#each projects as project}
-    <div class="grid border-2 bg-gray-50 rounded-lg px-2 pt-1 pb-2">
-      <div class="label font-semibold grid grid-flow-col justify-between">
+    <div class="grid">
+
+      <div class="label font-semibold grid grid-flow-col auto-cols-min gap-2">
         <div>{formatDate(project.fromDate)}</div>
+        {#if project.toDate}
+        <div>-</div>
         <div>{formatDate(project.toDate)}</div>
+        {/if}
       </div>
-      <div class="text-lg text-gray-700">{project.name}</div>
-      <div class="grid grid-flow-col auto-cols-min ">
-        <!-- divide-x-2 divide-gray-400 -->
+
+      <div class="grid grid-cols-[1fr_auto] gap-2">
+        <div class="text-base font-semibold text-gray-600">{project.name}</div>
+      </div>
+
+      {#if project.url}
+      <a href="{project.url}">{project.url}</a>
+      {/if}
+
+      <div class="grid grid-flow-col auto-cols-min  ">
         {#each project.types as type, i}
-        <!-- <div class="px-2 first:pl-0 last:pr-0 text-gray-900"> -->
         <div>
           {type}
         </div>
@@ -29,21 +39,16 @@
       </div>
 
       <div class="grid grid-flow-col auto-cols-min gap-x-2 ">
-        <!-- <div class="grid grid-flow-col auto-cols-min"> -->
+        <div class="grid grid-flow-col auto-cols-min gap-x-2">
           {#each project.languages as language}
           <Icon name={language} type="original" />
           {/each}
-        <!-- </div> -->
-        <div class="text-gray-400">
-          |
         </div>
-        <!-- <div class="grid grid-flow-col auto-cols-min"> -->
           {#each project.technologies as technology}
           <Icon name={technology} type="original" />
           {/each}
-        <!-- </div> -->
       </div>
-      
+
     </div>
   {/each}
   <!-- <div>Fremdwährungsanlage</div>
