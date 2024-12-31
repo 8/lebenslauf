@@ -55,11 +55,11 @@ export const projects: Array<Project> = [
     toDate: dateFromYM('2023-03'),
   },
   {
-    name: 'Webshop',
+    name: 'Meal Order Webshop',
     types: ['WebApp'],
     technologies: ['Knockout', 'Bootstrap'],
     languages: ['Javascript'],
-    fromDate: dateFromYM('2016-02'),
+    fromDate: dateFromYM('2015-11'),
     toDate: dateFromYM('2016-04'),
   },
   {
