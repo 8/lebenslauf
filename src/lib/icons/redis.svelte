@@ -4,7 +4,7 @@
   {@html Original}
 {/if}
 <script lang="ts">
-  import Original from "devicon/icons/csharp/csharp-original.svg?raw"
-  import Plain from "devicon/icons/csharp/csharp-plain.svg?raw"
+  import Original from "devicon/icons/redis/redis-original.svg?raw"
+  import Plain from "devicon/icons/redis/redis-plain.svg?raw"
   let { type } = $props()
 </script>
