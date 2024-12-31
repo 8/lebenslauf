@@ -35,7 +35,7 @@
           {type}
         </div>
         {#if i !== project.types.length-1}
-        <div class="px-2">-</div>
+        <div class="px-2">/</div>
         {/if}
         {/each}
       </div>
