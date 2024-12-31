@@ -41,7 +41,7 @@ export const projects: Array<Project> = [
   {
     name: 'Dokumentenverabeitung mit Texterkennung',
     types: ['Api', 'Service', 'WebApp'],
-    technologies: ['.NET', 'OpenCV', 'Tesseract', 'Docker'],
+    technologies: ['.NET', 'OpenCV', /*'Tesseract',*/ 'Docker'],
     languages: ['C#', 'SQL'],
     fromDate: dateFromYM('2019-04'),
     toDate: dateFromYM('2020-11'),

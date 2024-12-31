@@ -9,7 +9,7 @@
 <h2>Projekte</h2>
 <div class="grid gap-y-8 grid-flow-row grid-cols-3 gap-x-2">
   {#each projects as project}
-    <div class="grid gap-0">
+    <div class="grid gap-1 auto-rows-min">
 
       <div class="label grid grid-flow-col auto-cols-min gap-2">
         <div>{formatDate(project.fromDate)}</div>
@@ -18,18 +18,18 @@
           {#if project.toDate}
           {formatDate(project.toDate)}
           {:else}
-          Aktuell
+          *
           {/if}
         </div>
       </div>
 
-      <div class="font-semibold text-lg text-gray-500">{project.name}</div>
+      <div class="font-semibold text-gray-500">{project.name}</div>
 
       {#if project.url}
       <a class="text-sm" href="{project.url}">{project.url}</a>
       {/if}
 
-      <div class="grid grid-flow-col auto-cols-min  ">
+      <div class="grid grid-flow-col auto-cols-min text-sm">
         {#each project.types as type, i}
         <div>
           {type}
