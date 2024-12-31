@@ -41,7 +41,7 @@
       </div>
 
       <!-- <div class="grid grid-flow-col auto-cols-min gap-x-2 items-center"> -->
-      <div class="grid gap-x-2 items-center grid-cols-[min-content_min-content_min-content_min-content_min-content_min-content_min-content]" >
+      <div class="grid gap-x-2 gap-y-1 items-center grid-cols-[min-content_min-content_min-content_min-content_min-content_min-content_min-content]" >
         {#each project.languages as language}
         <Icon name={language} type="original" />
         {/each}
