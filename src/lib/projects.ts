@@ -49,7 +49,7 @@ export const projects: Array<Project> = [
   {
     name: 'Backoffice Tolling Solutions',
     types: ['Api', 'WebApp', 'Service'],
-    technologies: ['.NET', 'Ansible', 'Docker', 'SignalR', 'gRPC', 'Blazor', 'OpenAPI', 'WPF' /*, 'RxJS'*/],
+    technologies: ['.NET', 'Ansible', 'Docker', 'SignalR', 'gRPC', 'Blazor', 'OpenAPI', 'WPF', 'Redis' /*, 'RxJS'*/],
     languages: ['C#', 'Typescript', 'XAML'],
     fromDate: dateFromYM('2016-06'),
     toDate: dateFromYM('2023-03'),
