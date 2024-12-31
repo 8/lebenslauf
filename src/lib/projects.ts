@@ -6,14 +6,6 @@ const dateFromYM = (s: string) => DateTime.fromFormat(s, 'yyyy-MM').toJSDate()
 
 export const projects: Array<Project> = [
   {
-    name: 'GitContributors',
-    url: 'https://gitcontributors.com',
-    types: ['WebSite', 'DesktopApp'],
-    technologies: ['Tauri', 'Svelte', 'Ansible', 'SQLite'],
-    languages: ['Rust', 'Typescript', 'SQL'],
-    fromDate: dateFromYM('2023-09')
-  },
-  {
     name: 'Timetracking',
     url: 'https://timetracking.lostindetails.com',
     types: ['WebSite', 'DesktopApp'],
@@ -30,6 +22,15 @@ export const projects: Array<Project> = [
     toDate: dateFromYM('2024-08')
   },
   {
+    name: 'GitContributors',
+    url: 'https://gitcontributors.com',
+    types: ['WebSite', 'DesktopApp'],
+    technologies: ['Tauri', 'Svelte', 'Ansible', 'SQLite'],
+    languages: ['Rust', 'Typescript', 'SQL'],
+    fromDate: dateFromYM('2023-09'),
+    toDate: dateFromYM('2024-02'),
+  },
+  {
     name: 'Vault Exporter',
     url: 'https://vault-exporter.com',
     types: ['WebSite', 'DesktopApp'],
@@ -38,12 +39,12 @@ export const projects: Array<Project> = [
     fromDate: dateFromYM('2019-10')
   },
   {
-    name: 'Dokumentenverarbeitung mit Texterkennung',
+    name: 'Dokumentenverabeitung mit Texterkennung',
     types: ['Api', 'Service', 'WebApp'],
     technologies: ['.NET', 'OpenCV', 'Tesseract', 'Docker'],
     languages: ['C#', 'SQL'],
     fromDate: dateFromYM('2019-04'),
-    toDate: dateFromYM('2020-11')
+    toDate: dateFromYM('2020-11'),
   },
   {
     name: 'Backoffice Tolling Solutions',
@@ -51,7 +52,7 @@ export const projects: Array<Project> = [
     technologies: ['.NET', 'Ansible', 'Docker', 'SignalR', 'gRPC', 'Blazor', 'OpenAPI', 'WPF' /*, 'RxJS'*/],
     languages: ['C#', 'Typescript', 'XAML'],
     fromDate: dateFromYM('2016-06'),
-    toDate: dateFromYM('2023-03')
+    toDate: dateFromYM('2023-03'),
   },
   {
     name: 'Webshop',
@@ -59,7 +60,7 @@ export const projects: Array<Project> = [
     technologies: ['Knockout', 'Bootstrap'],
     languages: ['Javascript'],
     fromDate: dateFromYM('2016-02'),
-    toDate: dateFromYM('2016-04')
+    toDate: dateFromYM('2016-04'),
   },
   {
     name: 'Fragebogen Software',
@@ -75,7 +76,7 @@ export const projects: Array<Project> = [
     technologies: ['WPF', '.NET', 'SQL Server', 'Reporting Services'],
     languages: ['C#', 'XAML', 'SQL', 'Javascript'],
     fromDate: dateFromYM('2015-10'),
-    toDate: dateFromYM('2024-09'),
+    // toDate: dateFromYM('2024-09'),
   },
   {
     name: 'Geldverpackungsanlage',
@@ -90,7 +91,8 @@ export const projects: Array<Project> = [
     types: ['WebApp'],
     technologies: ['M-Files', '.NET'],
     languages: ['C#'],
-    fromDate: dateFromYM('2015-10')
+    fromDate: dateFromYM('2015-10'),
+    toDate: dateFromYM('2015-11'),
   },
 ]
 

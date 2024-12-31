@@ -71,7 +71,7 @@
   <div class="pt-10">
     <div>
       <h2>Serviceleistungen</h2>
-      <div class="text-xl text-gray-500 ">Beratung & Entwicklung</div>
+      <div class="text-xl text-cyan-700">Beratung & Entwicklung</div>
       <ul class="pt-1">
         <li>Web Applikationen</li>
         <li>Desktop Applikationen</li>
@@ -88,6 +88,18 @@
   </div>
 
   <div class="pt-10 grid grid-cols-2">
+    <Section title="Technologien">
+      <ul class="list-none grid grid-flow-row gap-y-1 grid-cols-2">
+        {#each technologies as technology}
+          <li>
+            <div class="grid grid-flow-col auto-cols-min gap-1 items-center text-nowrap">
+              <Icon name={technology} type="original" />
+              {technology}
+            </div>
+          </li>
+        {/each}
+      </ul>
+    </Section>
     <Section title="Programmiersprachen">
       <ul class="list-none grid grid-flow-row gap-y-1">
         {#each languages as language}
@@ -101,22 +113,6 @@
         {/each}
       </ul>
     </Section>
-    <Section title="Technologien">
-      <ul class="list-none grid grid-flow-row gap-y-1">
-        {#each technologies as technology}
-          <li>
-            <div class="grid grid-flow-col auto-cols-min gap-1 items-center text-nowrap">
-              <Icon name={technology} type="original" />
-              {technology}
-            </div>
-          </li>
-        {/each}
-      </ul>
-    </Section>
   </div>
 
-  <div>
-  </div>
-
-  <!-- <Technologies /> -->
 </div>

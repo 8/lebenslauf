@@ -3,28 +3,30 @@
   import { projects } from "$lib/projects"
   import { DateTime } from "luxon"
   const formatDate = (dt: Date | undefined) =>
-    dt ? DateTime.fromJSDate(dt).toFormat('yyyy-MM') : ''
+    dt ? DateTime.fromJSDate(dt).toFormat('yyyy/MM') : ''
 </script>
 
 <h2>Projekte</h2>
-<div class="grid gap-y-8 grid-flow-row grid-cols-3 gap-3">
+<div class="grid gap-y-8 grid-flow-row grid-cols-3 gap-x-2">
   {#each projects as project}
-    <div class="grid">
+    <div class="grid gap-0">
 
-      <div class="label font-semibold grid grid-flow-col auto-cols-min gap-2">
+      <div class="label grid grid-flow-col auto-cols-min gap-2">
         <div>{formatDate(project.fromDate)}</div>
-        {#if project.toDate}
         <div>-</div>
-        <div>{formatDate(project.toDate)}</div>
-        {/if}
+        <div>
+          {#if project.toDate}
+          {formatDate(project.toDate)}
+          {:else}
+          Aktuell
+          {/if}
+        </div>
       </div>
 
-      <div class="grid grid-cols-[1fr_auto] gap-2">
-        <div class="text-base font-semibold text-gray-600">{project.name}</div>
-      </div>
+      <div class="font-semibold text-lg text-gray-500">{project.name}</div>
 
       {#if project.url}
-      <a href="{project.url}">{project.url}</a>
+      <a class="text-sm" href="{project.url}">{project.url}</a>
       {/if}
 
       <div class="grid grid-flow-col auto-cols-min  ">
@@ -38,7 +40,8 @@
         {/each}
       </div>
 
-      <div class="grid grid-flow-col auto-cols-min gap-x-2 items-center">
+      <!-- <div class="grid grid-flow-col auto-cols-min gap-x-2 items-center"> -->
+      <div class="grid gap-x-2 items-center grid-cols-[min-content_min-content_min-content_min-content_min-content_min-content_min-content]" >
         {#each project.languages as language}
         <Icon name={language} type="original" />
         {/each}
